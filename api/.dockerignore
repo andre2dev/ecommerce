@@ -1,0 +1,21 @@
+# Ignora diretórios comuns
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignora arquivos de ambiente
+.env
+.env.*
+
+# Ignora arquivos e pastas do Git
+.git
+.gitignore
+
+# Ignora arquivos temporários
+*.log
+*.sqlite3
+
+# Evita copiar o Dockerfile ou docker-compose.yml (opcional)
+Dockerfile
+docker-compose.yml

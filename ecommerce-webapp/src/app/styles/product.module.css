@@ -1,0 +1,92 @@
+
+.overview{
+  /* background-color: azure; */
+  padding: 2rem 0 ;
+  display: flex;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.left_box{
+  
+  flex: 1;
+  display: flex;
+}
+.left_box .gallery{
+  width: fit-content;
+  margin: 2rem 1rem 0  0;
+  align-self: auto;
+  
+}
+.left_box .gallery .thumbnail{
+  padding: 0.25rem 0;
+}
+
+.left_box .main_image{
+  margin: 0 1rem ;
+}
+.right_box{
+  flex: 1;  
+}
+/* title */
+.right_box h3 {
+  margin: 0 0 0.5em 0em;
+  padding: 0;
+}
+/* price */
+.right_box h4 {
+  margin: 0 0 0.2em 0;
+  font-size: 1.2em;
+}
+.right_box p {
+  font-size: 0.9em;
+  margin: 0 0 1rem 0;
+}
+
+.right_box button{ 
+  background-color: var(--light-gray);
+  border: none;
+  padding: 0.45rem;
+  width: 99%;
+  height: 1.9rem;
+  box-shadow: 0.1rem 0.1rem rgb(180, 180, 180);
+  margin: 1rem 0 0 0 ;
+}
+
+@media (max-width: 768px){
+  .overview{
+    display: block;
+  }
+
+  .left_box .gallery{
+    display: none;
+  }
+  .left_box .main_image{margin: auto;}
+  .left_box .main_image img{
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 450px){
+  .left_box .main_image img{
+    width: 300px;
+  }
+}
+
+.right_box button:hover{
+  background-color: rgb(197, 197, 197);
+  cursor:pointer;
+}
+
+.description{
+  width: 100%;
+}
+.description h3{
+  margin: 1rem 0;
+}
+
+.description p{
+  font-size: 0.9em;
+  margin: 0 0 0.8em 0;
+  text-align: justify;
+  
+}

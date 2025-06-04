@@ -1,0 +1,26 @@
+
+.container{
+ padding: 0.5rem 0;
+}
+.container input{
+  background-color: var(--light-gray);
+  border: none;
+  height: 2rem;
+  width: 80%;
+  padding: 0.5rem;
+}
+
+.container button{
+  background-color: var(--light-gray);
+  border: none;
+  padding: 0.45rem;
+  float: right;
+  width: 19%;
+  height: 1.9rem;
+  box-shadow: 0.1rem 0.1rem rgb(180, 180, 180);
+  margin-right: 0.1rem;
+}
+.container button:hover{
+  background-color: rgb(197, 197, 197);
+  cursor:pointer;
+}

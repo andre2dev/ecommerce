@@ -1,0 +1,42 @@
+
+
+.header{
+  width: 100%;
+ 
+  /* padding: 1rem; */
+}
+
+.header div:first-child{
+  display: flex;
+  padding: 0.5rem;
+  border: 1px solid var(--light-gray);
+}
+
+.header p{
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 0.8em;
+  flex: 1;
+  height: 2rem;
+  padding: 0.5rem; 
+}
+
+@media (max-width: 768px){
+  .header p{
+    height: 3rem;
+  }
+}
+
+.header div p:nth-of-type(2){
+text-align: right;
+}
+
+.header a:hover{
+  font-weight: bold;
+}
+
+.header h1{
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--light-gray);
+}

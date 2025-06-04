@@ -1,0 +1,50 @@
+services:
+  db: 
+    image: postgres:latest
+    env_file:
+      - .env
+    volumes:
+      - data:/var/lib/postgresql/data
+
+  api:
+    # image: 44andre/myecommerce-api
+    build: 
+      context: ./api/
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./api:/app
+    env_file:
+      - .env
+    depends_on:
+      - db
+  
+  app:
+      # image: 44andre/myecommerce-webapp
+      build: 
+        context: ./ecommerce-webapp/
+        dockerfile: Dockerfile
+      ports:
+        - "3000:3000"
+      volumes:
+        - ./ecommerce-webapp:/app
+      env_file:
+        - .env
+      depends_on:
+        - db
+        - api
+
+  nginx: # Reverse proxy, mainly used to access container by service name, v.g. api/
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - db
+      - api
+      - app
+    ports:
+      - "3456:3456"
+volumes:
+  data:
+  

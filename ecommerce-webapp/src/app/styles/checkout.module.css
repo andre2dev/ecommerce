@@ -1,0 +1,62 @@
+
+.container{
+  width: 100%;
+}
+
+.container .hero{
+  padding: 2rem 0 0 0 ;
+}
+.container .hero h2{
+  text-align: center;
+  width: 100%;
+}
+
+.rowItem{
+  text-align: center;
+  width: 600px;
+  margin: 2rem  auto;
+}
+.rowItem p{
+  padding: 0 0 1rem ;
+}
+.rowItem table {
+  width: 100%;
+  margin: 0 0 1rem 0;
+  border-spacing:0;
+  border: 1px solid gray;
+}
+.rowItem table tr{
+  margin: 0;
+}
+.rowItem table td{
+  border: 1px solid gray;
+  margin: 0;
+  padding: 0.3rem;
+}
+.rowItem table thead, .rowItem table tfoot{
+  font-weight: bold;
+}
+.btn_back_to_products_list{
+  background-color: var(--light-gray);
+  border: none;
+  padding: 0.45rem;
+  margin: 2rem 0 0 0;
+  width: 70%;
+  height: 1.9rem;
+  box-shadow: 0.1rem 0.1rem rgb(180, 180, 180);
+  margin-right: 0.1rem;
+}
+
+.btn_back_to_products_list:hover{
+  background-color: rgb(197, 197, 197);
+  cursor:pointer;
+}
+
+
+
+@media (max-width: 700px){
+  .rowItem{
+    text-align: center;
+    width: 100%;
+  }
+ }

@@ -1,0 +1,29 @@
+
+.rowItem{
+  padding:1rem 1rem 1rem 0 ;
+  display: flex;
+  border-bottom: 1px dashed lightgray;  
+}
+
+.imageContainer{
+  text-align: left; 
+  /* background-color: blueviolet; */
+}
+
+/* .imageContainer img{
+  width: 200px;
+  border: 1px solid black;
+
+} */
+
+.itemText{
+  flex: 2;
+  padding: 0.5rem;
+}
+.itemText h3{
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.itemText h4{
+  font-size: 1.2rem;
+}
