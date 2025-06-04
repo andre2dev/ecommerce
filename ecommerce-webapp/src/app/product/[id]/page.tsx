@@ -9,9 +9,6 @@ import IProduct from "@/app/Interfaces/IProduct";
 import { toBRL } from "@/app/utils/utils";
 import ICartProduct from "@/app/Interfaces/ICartProduct";
 import ICartProductList from "@/app/Interfaces/ICartProductList";
-import Image from "next/image";
-
-
 
 export default function Product(): ReactElement{
     const params = useParams();
@@ -31,6 +28,7 @@ export default function Product(): ReactElement{
       
     // Product
     useEffect(() => {
+        if (!idProduct) return; //if idProduct is not ready do not make the request
         getProducts({id: idProduct!.toString()}).then((json: IProduct | {error: string}) => {
             setIsLoaded(true);
             
@@ -42,11 +40,13 @@ export default function Product(): ReactElement{
         (error) =>{
             setIsLoaded(true);
             setError(error);
-        })
-    }, [idProduct]);
+        });
+
+    }, [true]);
+    
 
     // Cart
-    // Cart info is got here, because i'll be needed in case of 'add to cart' button is clicked
+    // Cart info is got here, because it'll be needed in case of 'add to cart' button is clicked
     useEffect(() => {
         getCart(FIXED_CART_CODE).then((json: ICartProductList) => {
             setIsLoaded(true);

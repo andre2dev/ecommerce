@@ -3,6 +3,7 @@ import ICartProduct from "../Interfaces/ICartProduct";
 
 
 function getBaseURL(): string {
+    // const url: string | undefined = 'http://localhost:5000/api'; 
     const url: string | undefined = process.env.NEXT_PUBLIC_BASE_URL;
     if (!url) {
         throw new Error('NEXT_PUBLIC_BASE_URL is not set');

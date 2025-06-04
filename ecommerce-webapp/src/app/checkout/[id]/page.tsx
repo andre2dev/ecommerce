@@ -34,7 +34,7 @@ export default function Checkout(): ReactElement{
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
     useEffect(()=>{
-        if(orderId){
+        if(!orderId) return;
             getOrder(orderId.toString()).then((json:IOrder) => {
                 setOrder(json);
                 setIsLoaded(true);
@@ -43,8 +43,7 @@ export default function Checkout(): ReactElement{
                 setError(error);
                 setIsLoaded(false);
             });
-        }
-
+        
     }, []);
 
     if (error){
@@ -58,15 +57,13 @@ export default function Checkout(): ReactElement{
         <div className={styles.container}>
             <div className={styles.hero}><h2>PEDIDO FINALIZADO 🎉</h2></div>
             <div className={styles.rowItem}>
-                <p> O seu pedido foi finlizado com sucesso. </p>
+                <p> O seu pedido foi finalizado com sucesso. </p>
                 <table>
                     <thead>
                         <tr><td>Id</td><td>Status</td><td>Total</td></tr>
                     </thead>
                     <tbody>
-                       
-                        <tr><td>{order!.id}</td><td>{order!.status}</td><td>{toBRL(+order!.amount!)}</td></tr>
-                       
+                       <tr><td>{order!.id}</td><td>{order!.status}</td><td>{toBRL(+order!.amount!)}</td></tr>
                     </tbody>
                 </table>
                 <table>
